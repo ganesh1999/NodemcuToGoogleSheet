@@ -1,0 +1,26 @@
+!pip install --upgrade -q gspread
+!pip install gspread-dataframe
+
+
+import numpy as np
+import pandas as pd
+import gspread
+from gspread_dataframe import get_as_dataframe, set_with_dataframe
+
+
+from google.colab import auth
+auth.authenticate_user()
+from oauth2client.client import GoogleCredentials
+gc = gspread.authorize(GoogleCredentials.get_application_default())
+
+
+sheet1 = gc.open_by_url('sheet url')
+
+vs = sheet1.worksheet('randomsheet')
+
+data = get_as_dataframe(vs)
+
+data
+
+
+//   documentation -->  https://gspread.readthedocs.io/en/latest/index.html
