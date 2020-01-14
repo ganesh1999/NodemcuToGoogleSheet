@@ -21,6 +21,12 @@ vs = sheet1.worksheet('randomsheet')
 data = get_as_dataframe(vs)
 
 data
+  // update cell value
+  
+  
+worksheet = sheet1.get_worksheet(0)
+
+worksheet.update_acell('B1', 'Bingo!')
 
 
 //   documentation -->  https://gspread.readthedocs.io/en/latest/index.html
